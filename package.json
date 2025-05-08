@@ -1,0 +1,16 @@
+{
+  "name": "qa-dojo-pratice-pw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "is-even-check-new": "^1.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.15"
+  }
+}
