@@ -4,9 +4,6 @@ test('CC-Test1 Order coffee', async ({ page }) => {
   await page.goto('https://coffee-cart.app/');
   await page.locator('[data-test="Espresso"]').click();
   await page.locator('[data-test="checkout"]').click();
-  await page.getByRole('textbox', { name: 'Name' }).click();
-  await page.getByRole('textbox', { name: 'Name' }).fill('');
-  await page.getByRole('textbox', { name: 'Name' }).press('CapsLock');
   await page.getByRole('textbox', { name: 'Name' }).fill('Zheka');
   await page.getByRole('textbox', { name: 'Email' }).click();
   await page.getByRole('textbox', { name: 'Email' }).fill('qwerty@gmail.com');
@@ -46,7 +43,7 @@ test('CC-Test4 Clear cart', async ({ page }) => {
     await expect(page.getByText('No coffee, go add some.')).toBeVisible();
   }); 
 
-test('CC-Test5 Add second coffee with "Add one" button', async ({ page }) => {
+test('CC-Test5 Add coffee with "Add one" button', async ({ page }) => {
     await page.goto('https://coffee-cart.app/');
     await page.locator('[data-test="Americano"]').click();
     await page.getByText('Total').hover();
