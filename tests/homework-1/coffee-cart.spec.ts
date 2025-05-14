@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('CC-Test1 Order coffee', async ({ page }) => {
+test('CC-Test1 Order coffee', { tag: "@smoke" }, async ({ page }) => {
   await page.goto('https://coffee-cart.app/');
   await page.locator('[data-test="Espresso"]').click();
   await page.locator('[data-test="checkout"]').click();
@@ -16,7 +16,7 @@ test('CC-Test1 Order coffee', async ({ page }) => {
   await expect(page.locator('[data-test="checkout"]')).toContainText('Total: $0.00');
 });
 
-test('CC-Test2 Add extra cup', async ({ page }) => {
+test('CC-Test2 Add extra cup', { tag: "@smoke" }, async ({ page }) => {
     await page.goto('https://coffee-cart.app/');
     await page.locator('[data-test="Cappuccino"]').click();
     await page.locator('[data-test="Cappuccino"]').click();
@@ -26,7 +26,7 @@ test('CC-Test2 Add extra cup', async ({ page }) => {
     await expect(page.locator('#app')).toContainText('cart (4)');
   });
 
-test('CC-Test3 Skip extra cup', async ({ page }) => {
+test('CC-Test3 Skip extra cup', { tag: "@smoke" }, async ({ page }) => {
     await page.goto('https://coffee-cart.app/');
     await page.locator('[data-test="Mocha"]').click();
     await page.locator('[data-test="Mocha"]').click();
@@ -35,7 +35,7 @@ test('CC-Test3 Skip extra cup', async ({ page }) => {
     await expect(page.getByRole('listitem').filter({ hasText: 'cart (3)' })).toBeVisible();
   });
 
-test('CC-Test4 Clear cart', async ({ page }) => {
+test('CC-Test4 Clear cart', { tag: "@smoke" }, async ({ page }) => {
     await page.goto('https://coffee-cart.app/');
     await page.locator('[data-test="Mocha"]').click();
     await page.getByRole('link', { name: 'Cart page' }).click();
@@ -43,7 +43,7 @@ test('CC-Test4 Clear cart', async ({ page }) => {
     await expect(page.getByText('No coffee, go add some.')).toBeVisible();
   }); 
 
-test('CC-Test5 Add coffee with "Add one" button', async ({ page }) => {
+test('CC-Test5 Add coffee with "Add one" button', { tag: "@smoke" }, async ({ page }) => {
     await page.goto('https://coffee-cart.app/');
     await page.locator('[data-test="Americano"]').click();
     await page.getByText('Total').hover();
@@ -52,7 +52,7 @@ test('CC-Test5 Add coffee with "Add one" button', async ({ page }) => {
     await expect(page.getByRole('listitem').filter({ hasText: 'cart (2)' })).toBeVisible();
   });  
 
-test('CC-Test6 Remove coffee with "Remove one" button', async ({ page }) => {
+test('CC-Test6 Remove coffee with "Remove one" button', { tag: "@smoke" }, async ({ page }) => {
     await page.goto('https://coffee-cart.app/');
     await page.locator('[data-test="Cafe_Latte"]').click();
     await expect(page.locator('[data-test="checkout"]')).toContainText('Total: $16.00');
