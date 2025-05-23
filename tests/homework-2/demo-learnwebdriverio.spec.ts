@@ -9,6 +9,7 @@ test.describe('tests set for auth page', ()=>{
     await page.locator("//button[contains(text(),'Sign up')]").click();
     await expect(page.getByRole('link', { name: 'Zheka5' })).toContainText('Zheka5');
   }) 
+
   test('DL-T2 login', { tag: ["@regression", "@smoke"]}, async({page}) => {
     await page.goto('https://demo.learnwebdriverio.com/login');
     await page.locator('//input[@placeholder="Email"]').pressSequentially('fellolenitri-3810@yopmail.com', { delay: 100});
@@ -16,6 +17,7 @@ test.describe('tests set for auth page', ()=>{
     await page.locator("//button[contains(text(),'Sign in')]").click();
     await expect(page.getByRole('link', { name: 'Zheka5' })).toContainText('Zheka5');
   })
+
   test('DL-T3 login with incorrect credentials', { tag: ["@regression", "@smoke"]}, async({page}) => {
     await page.goto('https://demo.learnwebdriverio.com/login');
     await page.locator('//input[@placeholder="Email"]').pressSequentially('fellolenitri-3810@yopmail.com', { delay: 100});
@@ -23,6 +25,7 @@ test.describe('tests set for auth page', ()=>{
     await page.locator("//button[contains(text(),'Sign in')]").click();
     await expect(page.locator('//ul[@class="error-messages"]/li')).toContainText('email or password is invalid');
   })
+
   test('DL-T4 Register with existed user', { tag: ["@regression", "@smoke"]}, async({page}) => {
     await page.goto('https://demo.learnwebdriverio.com/register');
     await page.locator('//input[@placeholder="Username"]').fill('Zheka5');
@@ -32,6 +35,7 @@ test.describe('tests set for auth page', ()=>{
     await expect(page.locator('//ul[@class="error-messages"]/li[1]')).toContainText('username is already taken.');
     await expect(page.locator('//ul[@class="error-messages"]/li[2]')).toContainText('email is already taken.');
   })
+  
   test('DL-T4 redirects with "Have an account?" and "Need an account?" links ', { tag: ["@regression", "@smoke"]}, async({page}) => {
     await page.goto('https://demo.learnwebdriverio.com/login');
     await page.getByRole('link', { name: 'Need an account?' }).click();
