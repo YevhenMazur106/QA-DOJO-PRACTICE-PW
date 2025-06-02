@@ -8,5 +8,5 @@ function checkTrafficLights(color: string) {
   if (color === "Red") {
     console.log("зачекайте");
   }
-}
+};
 checkTrafficLights("Green");

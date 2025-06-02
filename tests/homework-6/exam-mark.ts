@@ -7,5 +7,5 @@ function checkExamMark(examMark) {
   if (examMark < 50) {
     console.log("Тест не складено");
   }
-}
-checkExamMark(42);
+};
+checkExamMark(examMark);

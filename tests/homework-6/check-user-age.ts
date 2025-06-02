@@ -1,7 +1,11 @@
 const userAge = 17;
 
-if (userAge >= 18) {
-  console.log("Ви можете голосувати.");
+function checkUserAge(age: number) {
+  if (userAge >= 18) {
+  return ("Ви можете голосувати.");
 } else {
-  console.log("Ви ще не можете голосувати.");
+  return ("Ви ще не можете голосувати.");
+};
 }
+
+checkUserAge(userAge);

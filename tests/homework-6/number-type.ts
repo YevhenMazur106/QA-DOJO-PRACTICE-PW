@@ -8,5 +8,5 @@ function checkNumberType(count) {
   if (count > 0) {
     console.log("Число додатнє.");
   }
-}
+};
 checkNumberType(-8);
