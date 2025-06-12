@@ -10,9 +10,9 @@ myColor = ["Red", "Green", "White", "Black"];
 const myColor = ["Red", "Green", "White", "Black"];
 
 //для об'єднання елментів масиву в стрінгу використовуємо метод join()
-const mergeArrayToString = (array) => {
-  return array.join();
+const mergeArrayToString = (array, separator) => {
+  return array.join(separator);
 };
 
-console.log(mergeArrayToString(myColor));
+console.log(mergeArrayToString(myColor, "+"));
 console.log(myColor);

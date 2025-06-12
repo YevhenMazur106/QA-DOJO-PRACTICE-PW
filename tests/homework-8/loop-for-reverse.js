@@ -4,6 +4,7 @@
 
 const arrayReverse = [];
 
+// метод unshift()
 for (let i = 1; i <= 241; i++) {
   arrayReverse.unshift(i);
 }

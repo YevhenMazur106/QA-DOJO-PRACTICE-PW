@@ -8,12 +8,9 @@ const array1 = "QA DOJO";
 const array2 = [1, 2, 4, 0];
 
 // перевірка лашпєтським методом використовуючи блок if
-const isArray = (value) => {
-  if (typeof value === "object") {
-    return true;
-  } else {
-    return false;
-  }
-};
+const isArray = (arr) => Array.isArray(arr);
+
 console.log(isArray(array1));
 console.log(isArray(array2));
+
+console.log(Array.isArray([1, 2, 4, 0]))

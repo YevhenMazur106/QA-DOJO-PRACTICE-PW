@@ -24,7 +24,6 @@ const lineBetweenEvenNumbers = (str) => {
 
   return mergedDigits;
 };
-
 console.log(lineBetweenEvenNumbers(numbers));
 
 const separateValuesFromString = numbers.split("");

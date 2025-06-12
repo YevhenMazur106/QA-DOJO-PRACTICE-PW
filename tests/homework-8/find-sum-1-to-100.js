@@ -3,19 +3,25 @@
 ✏️ Напиши програму, яка знайде суму чисел від 1 до 100.
 */
 
-const array = [];
+const array1 = [];
 
 for (let i = 1; i <= 100; i++) {
-  array.push(i);
+  array1.push(i);
 }
-console.log(array);
+console.log(array1);
 
-const lineBetweenEvenNumbers = (str) => {
-  let mergedDigits = digits[0]; // починаємо з першої цифри [0], в масиві numbers буде 1
+const sumNumbers = (arr) => {
+  let sum = 0; // оголошуємо змінну в якій будемо зберігати проміжну суму чисел
 
-  for (let i = 1; i <= digits.length; i++) {
-    result;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]
   }
-
-  return mergedDigits;
+  return sum;
 };
+console.log(sumNumbers(array1))
+
+
+
+
+
+

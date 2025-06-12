@@ -10,9 +10,9 @@ const fillArray = (arr) => {
   }
   return arr;
 };
-
 const filledArray = fillArray(array);
 console.log(filledArray);
+
 
 const createArrayWithRange = (start, end) => {
   const result = [];
