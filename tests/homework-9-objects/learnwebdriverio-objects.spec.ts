@@ -1,7 +1,7 @@
 import { test, expect, Page } from "@playwright/test";
 import { faker } from "@faker-js/faker";
-import { RegistrationPage } from "../homework-9/condulitApp/pages/RegisterPage";
-import { ArticlePage } from "../homework-9/condulitApp/pages/ArticlePage";
+import { RegistrationPage } from "../homework-9-objects/condulitApp/pages/RegisterPage";
+import { ArticlePage } from "../homework-9-objects/condulitApp/pages/ArticlePage";
 
 test.describe("tests with functions and loop", () => {
   const fakeEmail = faker.internet.email();

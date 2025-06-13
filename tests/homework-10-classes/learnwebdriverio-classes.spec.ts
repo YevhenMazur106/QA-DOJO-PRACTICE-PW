@@ -1,5 +1,5 @@
 import { test, expect, Page } from "@playwright/test";
-import { AuthPage } from "../homework-10/conduitApp/pages/AuthPage";
+import { AuthPage } from "./conduitApp/pages/AuthPage";
 import { HomePage } from "./conduitApp/pages/HomePage";
 import { ArticlePage } from "./conduitApp/pages/ArticlePage";
 
