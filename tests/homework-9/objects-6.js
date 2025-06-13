@@ -16,9 +16,8 @@ Object.keys(book).forEach((key) => {
   console.log(`${key}: ${book[key]}`);
 });
 
-const bookValues = Object.keys(book)
+const bookValues = Object.keys(book);
 
-console.log(typeof bookValues)
+console.log(typeof bookValues);
 console.log(typeof bookValues === "object");
 console.log(typeof bookValues === "object" && !Array.isArray(bookValues));
-
