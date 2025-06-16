@@ -4,7 +4,6 @@ export class HomePage {
   page: Page;
   globalFeedTabLocator: Locator;
   yourFeedTabLocator: Locator;
-  demoTagLocator: Locator;
   articleLocator: Locator;
 
   constructor(page: Page) {
@@ -15,7 +14,6 @@ export class HomePage {
     this.yourFeedTabLocator = this.page.locator(
       '//a[contains(text(),"Your Feed")]'
     );
-    this.demoTagLocator = this.page.locator('//a[@href="/tag/demo"]');
     this.articleLocator = this.page.locator(
       '//h1[@data-qa-type="preview-title"]'
     );
@@ -28,8 +26,8 @@ export class HomePage {
     await this.globalFeedTabLocator.click();
   }
 
-  async filterArticlesByDemoTag() {
-    await this.demoTagLocator.click();
+  async filterArticlesByDemoTag(tagName: string) {
+    await this.page.locator(`//a[@href="/tag/${tagName}"]`).click();
   }
 
   async selectArticle() {
