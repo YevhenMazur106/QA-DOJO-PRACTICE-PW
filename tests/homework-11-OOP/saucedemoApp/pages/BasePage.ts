@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 
-export class BasePage {
+export abstract class BasePage {
   protected page: Page;
   header: Header;
   private footer: Footer;

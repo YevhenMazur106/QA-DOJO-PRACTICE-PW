@@ -1,12 +1,11 @@
 import { test, expect } from "@playwright/test";
-import { LoginPage } from "./sausedemo-pages/LoginPage";
-import { ProductsPage } from "./sausedemo-pages/ProductsPage";
-import { BasePage } from "./sausedemo-pages/BasePage";
-import { CartPage } from "./sausedemo-pages/CartPage";
-import { CheckoutPage1 } from "./sausedemo-pages/CheckoutPage1";
+import { LoginPage } from "./saucedemoApp/pages/LoginPage";
+import { ProductsPage } from "./saucedemoApp/pages/ProductsPage";
+import { CartPage } from "./saucedemoApp/pages/CartPage";
+import { CheckoutPage1 } from "./saucedemoApp/pages/CheckoutPage1";
+import { CheckoutPage2 } from "./saucedemoApp/pages/CheckoutPage2";
+import { CompletePage } from "./saucedemoApp/pages/CompletePage";
 import { faker } from "@faker-js/faker";
-import { CheckoutPage2 } from "./sausedemo-pages/CheckoutPage2";
-import { CompletePage } from "./sausedemo-pages/CompletePage";
 
 test.describe("oop test", () => {
   const personalData = {
@@ -27,7 +26,6 @@ test.describe("oop test", () => {
     async ({ page }) => {
       const loginPage = new LoginPage(page);
       const productsPage = new ProductsPage(page);
-      const basePage = new BasePage(page);
       const cartPage = new CartPage(page);
       const checkoutPage1 = new CheckoutPage1(page);
       const checkoutPage2 = new CheckoutPage2(page);
@@ -38,8 +36,8 @@ test.describe("oop test", () => {
         personalData.credentials.password
       );
       await productsPage.addItemToCard(1);
-      await expect(basePage.header.cartLinkLocator).toHaveText("1");
-      await basePage.header.clickOnCart();
+      await expect(productsPage.header.cartLinkLocator).toHaveText("1");
+      await productsPage.header.clickOnCart();
       await expect(cartPage.itemNameLocator).toBeInViewport();
       await cartPage.clickCheckoutButton();
       await checkoutPage1.fillPersonalInformation(
