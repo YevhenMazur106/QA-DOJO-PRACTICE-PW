@@ -3,7 +3,7 @@ import { Page, Locator } from "@playwright/test";
 export class BasePage {
   protected page: Page;
   header: Header;
-  footer: Footer;
+  private footer: Footer;
 
   constructor(page: Page) {
     this.page = page;

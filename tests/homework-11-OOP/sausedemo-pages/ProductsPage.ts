@@ -31,15 +31,16 @@ export class ProductsPage extends BasePage {
     await this.addToCartButton.nth(i).click();
   }
 
-  async selectProduct(i: number = 0) {
+  private async selectProduct(i: number = 0) {
     await this.itemNameLocator.nth(i).click();
   }
   async getItemPrice(i: number = 0) {
-    const priceText = await this.itemPriceLocator.nth(i).textContent();
-    return priceText?.trim().replace("$", "") ?? "";
+    const priceText = await this.itemPriceLocator.nth(i).innerText();
+    const price = priceText.split("$")[1];
+    return price;
   }
 
-  async getItemDescription(i: number = 0) {
+  private async getItemDescription(i: number = 0) {
     const itemDescription = await this.itemDescriptionLocator
       .nth(i)
       .textContent();

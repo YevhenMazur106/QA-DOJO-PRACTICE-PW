@@ -19,12 +19,9 @@ export class CheckoutPage2 extends ProductsPage {
   }
 
   async getItemTotalPrice() {
-    const itemTotalPrice = await this.itemTotalPriceLocator.textContent();
-    if (itemTotalPrice) {
-      const parts = itemTotalPrice.split("$");
-      const price = parts[1];
-      return price;
-    }
+    const itemTotalPriceText = await this.itemTotalPriceLocator.innerText();
+    const price = itemTotalPriceText.split("$")[1];
+    return price;
   }
 
   async clickOnFinishButton() {

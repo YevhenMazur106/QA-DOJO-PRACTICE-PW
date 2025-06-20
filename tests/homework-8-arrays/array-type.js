@@ -13,4 +13,12 @@ const isArray = (arr) => Array.isArray(arr);
 console.log(isArray(array1));
 console.log(isArray(array2));
 
-console.log(Array.isArray([1, 2, 4, 0]))
+console.log(Array.isArray([1, 2, 4, 0]));
+
+const price = "$9.99";
+const newPrice = price.split("$")[1];
+console.log(newPrice);
+
+const str = "Item total: $9.99";
+const priceNew = str.split("$")[1];
+console.log(priceNew);

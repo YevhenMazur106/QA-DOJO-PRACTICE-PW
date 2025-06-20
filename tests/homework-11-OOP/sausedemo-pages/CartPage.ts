@@ -23,11 +23,11 @@ export class CartPage extends ProductsPage {
     await this.checkoutButtonLocator.click();
   }
 
-  async returnToShopping() {
+  private async returnToShopping() {
     await this.continueShoppingButtonLocator.click();
   }
 
-  async deleteItemButton(i: number = 0) {
+  private async deleteItemButton(i: number = 0) {
     await this.removeButtonLocator.nth(i).click();
   }
 }
