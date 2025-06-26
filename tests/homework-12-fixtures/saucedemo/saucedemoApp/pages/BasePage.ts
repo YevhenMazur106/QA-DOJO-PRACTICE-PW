@@ -1,5 +1,5 @@
 import { Page, Locator } from "@playwright/test";
-import { Header } from "../../../tests/homework-11-OOP/saucedemoApp/components/Header1";
+import { Header } from "../components/Header";
 
 export abstract class BasePage {
   protected page: Page;
@@ -15,4 +15,3 @@ export abstract class BasePage {
     await this.page.reload();
   }
 }
-
