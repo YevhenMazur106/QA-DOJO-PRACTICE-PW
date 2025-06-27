@@ -16,6 +16,7 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Retry on CI only */
+  // globalSetup: "global-setup.ts",
   timeout: 10 * 1000,
   retries: 0,
   /* Opt out of parallel tests on CI. */
@@ -24,6 +25,7 @@ export default defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    // storageState: ".auth/storage-state.json",
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
