@@ -7,6 +7,7 @@ import {
   ArticleResponse,
 } from "../../../apps/conduitApp/api/articles/ArticleTypes";
 import { UserResponse } from "../../../apps/conduitApp/api/users/UserTypes";
+import { request } from "http";
 
 // згенерований копайлотом
 
@@ -106,4 +107,40 @@ test("create article - should be created", async ({ request }) => {
     token!
   );
   await expect(articleResponse).toBeOK();
+});
+
+test("edit article - article should be edited", async ({ request }) => {
+  const userController = new UserController(request);
+  const articleController = new ArticleController(request);
+  const loginResponse = await userController.login({
+    email: "waw@gmail.com",
+    password: "Password",
+  });
+  const token = await userController.getTokenFromResponse(loginResponse);
+  const requestBody: Article = {
+    title: "Forman",
+    description: "Firman",
+    body: "Ford",
+    tagList: ["hujojo"],
+  };
+  const articleResponse = await articleController.editArticle(
+    requestBody,
+    token!
+  );
+  await expect(articleResponse).toBeOK();
+});
+
+test("delete article - article should be deleted", async ({ request }) => {
+  const userController = new UserController(request);
+  const articleController = new ArticleController(request);
+  const loginResponse = await userController.login({
+    email: "waw@gmail.com",
+    password: "Password",
+  });
+  const token = await userController.getTokenFromResponse(loginResponse);
+  const articleResponse = await articleController.deleteArticle(
+    "fog-z4vsug",
+    token!
+  );
+  await expect(articleResponse).toBeOK;
 });
