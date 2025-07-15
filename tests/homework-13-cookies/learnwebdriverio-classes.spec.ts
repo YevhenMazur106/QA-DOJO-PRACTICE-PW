@@ -1,6 +1,7 @@
 import { expect } from "@playwright/test";
 import { test } from "./fixtures";
 import { createRegistrationData } from "./conduitApp/user-data";
+import { shmest } from "./fixture";
 
 test(
   "1-LD choose article by tag",
